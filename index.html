@@ -1,0 +1,733 @@
+26-dom-event
+
+26-1 What is Event, different types of event in web
+
+Event handler
+
+26-2 Add onclick handler directly or via javascript
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom event</title>
+</head>
+<body>
+   <h1 onclic="console.lgo('i am clicked')">dom event</h1>
+   <button title="this is a tooltip" onclick="console.log(7)">click</button>
+   <br>
+   <br>
+   <!--option-1-->
+   <button onclick="document.body.style.backgroundColor='yellow'">yellow</button>
+   <br>
+   <br>
+   <!--option-2--this-function-is-more-used>
+   <button onclick="makeRed()">red</button>
+   <script src="js/event.js"></script>
+    <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+    </script>
+    <br>
+    <br>
+    <!--option-3-->
+    <button id="make-blue">blue</button>
+   
+
+
+    <script src="js/event.js"></script>
+    <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        makeBlueButton.onclick = makeBlue;
+    </script>
+</body>
+</html>
+
+For option-3, external file. 
+
+
+console.log('this is separate js file');
+
+
+function makeBlue(){
+    document.body.style.backgroundColor= 'blue';
+}
+26-3 Different ways to use addEventListener on a button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom event</title>
+</head>
+<body>
+   <h1 onclic="console.lgo('i am clicked')">dom event</h1>
+   <button title="this is a tooltip" onclick="console.log(7)">click</button>
+   <br>
+   <br>
+   <!--option-1-->
+   <button onclick="document.body.style.backgroundColor='yellow'">yellow</button>
+   <br>
+   <br>
+   <!--option-2-->
+   <button onclick="makeRed()">red</button>
+   <script src="js/event.js"></script>
+    <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+    </script>
+    <br>
+    <br>
+    <!--option-3-->
+    <button id="make-blue">blue</button>
+
+
+    <br>
+    <br>
+    <!--option-4-->
+    <button id="make-pink">pink</button>
+    <script>
+    const pinkButton = document.getElementById('make-pink');
+    pinkButton.addEventListener('click', makePink);
+
+
+    function makePink(){
+        document.body.style.backgroundColor = 'pink';
+    }
+    </script>
+    <script src="js/event.js"></script>
+    <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        makeBlueButton.onclick = makeBlue;
+    </script>
+</body>
+</html>
+
+
+
+
+Option-5 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom event</title>
+</head>
+<body>
+   <h1 onclic="console.lgo('i am clicked')">dom event</h1>
+   <button title="this is a tooltip" onclick="console.log(7)">click</button>
+   <br>
+   <br>
+   <!--option-1-->
+   <button onclick="document.body.style.backgroundColor='yellow'">yellow</button>
+   <br>
+   <br>
+   <!--option-2-->
+   <button onclick="makeRed()">red</button>
+   <script src="js/event.js"></script>
+    <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+    </script>
+    <br>
+    <br>
+    <!--option-3-->
+    <button id="make-blue">blue</button>
+
+
+    <br>
+    <br>
+    <!--option-4-->
+    <button id="make-pink">pink</button>
+    <script>
+    const pinkButton = document.getElementById('make-pink');
+    pinkButton.addEventListener('click', makePink);
+
+
+    function makePink(){
+        document.body.style.backgroundColor = 'pink';
+    }
+    </script>
+
+
+<br>
+<br>
+
+
+
+
+<!--option-5-->
+<button id="make-green">green</button>
+
+
+    <script>
+    const makeGreenButton = document.getElementById('make-green');
+    makeGreenButton.addEventListener('click', function makeGreen(){
+        document.body.style.backgroundColor = 'green';
+    })
+    </script>
+
+
+
+
+    <script src="js/event.js"></script>
+    <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        makeBlueButton.onclick = makeBlue;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+Option - 6- is more important
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom event</title>
+</head>
+<body>
+   <h1 onclic="console.lgo('i am clicked')">dom event</h1>
+   <button title="this is a tooltip" onclick="console.log(7)">click</button>
+   <br>
+   <br>
+   <!--option-1-->
+   <button onclick="document.body.style.backgroundColor='yellow'">yellow</button>
+   <br>
+   <br>
+   <!--option-2-->
+   <button onclick="makeRed()">red</button>
+   <script src="js/event.js"></script>
+    <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+    </script>
+    <br>
+    <br>
+    <!--option-3-->
+    <button id="make-blue">blue</button>
+
+
+    <br>
+    <br>
+    <!--option-4-->
+    <button id="make-pink">pink</button>
+    <script>
+    const pinkButton = document.getElementById('make-pink');
+    pinkButton.addEventListener('click', makePink);
+
+
+    function makePink(){
+        document.body.style.backgroundColor = 'pink';
+    }
+    </script>
+
+
+<br>
+<br>
+<!--option-5-->
+<button id="make-green">green</button>
+
+
+    <script>
+    const makeGreenButton = document.getElementById('make-green');
+    makeGreenButton.addEventListener('click', function makeGreen(){
+        document.body.style.backgroundColor = 'green';
+    })
+    </script>
+
+
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+   
+ <!--option-6-->
+
+
+    <button id="make-goldenrod">goldenrod</button>
+
+
+    <script>
+    document.getElementById('make-goldenrod').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'goldenrod'
+    })
+    </script>
+
+
+
+
+
+
+    <script src="js/event.js"></script>
+    <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        makeBlueButton.onclick = makeBlue;
+    </script>
+</body>
+</html>
+
+
+26-4 Most common ways to set Event Handlers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom event</title>
+</head>
+<body>
+ 
+    <h1>Summary of DOM Event</h1>
+    <h3 id="handler-status">Text area</h3>
+    <button onclick="handleOnclick()">Handle Event by Add onclick Fuction</button>
+    <script>
+        function handleOnclick(){
+            const handelerStatus = document.getElementById('handler-status');
+            handelerStatus.innerText = 'Handled by function attached on onclick attribute';
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+Switching button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom event</title>
+</head>
+<body>
+ 
+    <h1>Summary of DOM Event</h1>
+    <h3 id="handler-status">Text area</h3>
+    <button onclick="handleOnclick()">Handle Event by Add onclick Fuction</button>
+
+
+    <button id ="event-listener">Handle event Switching</button>
+
+
+    <script>
+        function handleOnclick(){
+            const handelerStatus = document.getElementById('handler-status');
+            handelerStatus.innerText = 'Handled by function attached on onclick attribute';
+        }
+
+
+        // option-2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handelerStatus = document.getElementById('handler-status');
+            handelerStatus.innerText = 'Text updated by add Event listenr button'
+        })
+    </script>
+
+
+</body>
+</html>
+
+Switching button with input field
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom event</title>
+</head>
+<body>
+ 
+    <h1>Summary of DOM Event</h1>
+    <h3 id="handler-status">Text area</h3>
+    <p id="input-text-display">default Input Text</p>
+
+
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+
+
+    <br><br>
+    <button onclick="handleOnclick()">Handle Event by Add onclick Fuction</button>
+
+
+
+
+    <button id ="event-listener">Handle event Switching</button>
+
+
+
+
+    <script>
+        function handleOnclick(){
+            const handelerStatus = document.getElementById('handler-status');
+            handelerStatus.innerText = 'Handled by function attached on onclick attribute';
+        }
+
+
+
+
+        // option-2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handelerStatus = document.getElementById('handler-status');
+            handelerStatus.innerText = 'Text updated by add Event listenr button'
+        })
+
+
+        // option-2 recap
+
+
+        document.getElementById('btn-update').addEventListener('click', function(){
+        const inputField = document.getElementById('input-field')
+        const inputText = inputField.value;
+
+
+        const p = document.getElementById('input-text-display');
+        p.innerText = inputText;
+        inputField.value = '';
+        })
+
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+26-5 Create a comment box and display comment
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+</head>
+<body>
+   
+    <h1>Please add your comment</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+        <p>Ipsum ipsum Ipsum ipsum Ipsum ipsum Ipsum ipsum Ipsum ipsum</p>
+        <p>Dolor sit Dolor sit Dolor sit Dolor sit Dolor sit Dolor sit</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post">Post</button>
+    </div>
+    <script>
+        // step-1: add event listener to the post button
+
+
+        document.getElementById('btn-post').addEventListener('click', function(){
+            // step-2: get the comment
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+
+
+            // step-3: set the comment inside the comment container
+            // 1. get the comment continer
+            // 2. create a new element (p tag)
+            // 3. set the text of the comment as innerText of the p tag
+            // 4. add the p tag using appendChild
+
+
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+            // step-5: clear the text area
+            commentBox.value = '';
+        })
+    </script>
+</body>
+</html>
+
+output
+
+
+
+26-6 Simple github like delete confirmation button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+   
+    <h1>Explore More Events</h1>
+    <button id="btn-more">Events</button>
+    <input id="text-field" type="text">
+
+
+    <script>
+        document.getElementById('text-field').addEventListener('focus', function(){
+            console.log('Event triggeredinside the input field')
+        })
+        document.getElementById('text-field').addEventListener('blur', function(){
+            console.log('Event triggerd inside the input field blur')
+        })
+        document.getElementById('btn-more').addEventListener('mousemove', function(){
+            console.log('Event Triggerd');
+        })
+    </script>
+</body>
+</html>
+
+Output
+
+keydown
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+   
+    <h1>Explore More Events</h1>
+    <button id="btn-more">Events</button>
+    <input id="text-field" type="text">
+
+
+    <script>
+
+
+        document.getElementById('text-field').addEventListener('keydown', function(){
+            console.log(event.target.value)
+        })
+        document.getElementById('btn-more').addEventListener('mousemove', function(){
+            console.log('Event Triggerd');
+        })
+    </script>
+</body>
+</html>
+
+Output
+
+keypress
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+   
+    <h1>Explore More Events</h1>
+    <button id="btn-more">Events</button>
+    <input id="text-field" type="text">
+
+
+    <script>
+        // document.getElementById('text-field').addEventListener('focus', function(){
+        //     console.log('Event triggeredinside the input field')
+        // })
+        // 
+          document.getElementById('text-field').addEventListener('keypress', function(){
+            console.log(event.target.value)
+        })
+        document.getElementById('btn-more').addEventListener('mousemove', function(){
+            console.log('Event Triggerd');
+        })
+    </script>
+</body>
+</html>
+
+Output -
+is not perfect
+
+Keyup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+   
+    <h1>Explore More Events</h1>
+    <button id="btn-more">Events</button>
+    <input id="text-field" type="text">
+
+
+    <script>
+          document.getElementById('text-field').addEventListener('keyup', function(){
+            console.log(event.target.value)
+        })
+        document.getElementById('btn-more').addEventListener('mousemove', function(){
+            console.log('Event Triggerd');
+        })
+    </script>
+</body>
+</html>
+
+Output
+
+Github
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="secret-info">My secret info</h1>
+<input type="text">
+<button id="btn-delet">Delet</button>
+<script>
+    document.getElementById('btn-delet').addEventListener('click', function(){
+    const secret = document.getElementById('secret-info');
+    secret.style.display = 'none';
+    })
+</script>
+</body>
+</html>
+
+output-1
+
+output-2
+
+Delete button 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="secret-info">My secret info</h1>
+    <input id="delet-confirm" type="text" placeholder="please type delete">
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+        document.getElementById('delete-confirm').addEventListener('keyup', function(event){
+            const text = event.target.value;
+            const deleteButton = document.getElementById('btn-delet');
+            if(text === 'delete'){
+                deleteButton.removeAttribute('disabled');
+            }
+            else{
+                deleteButton.setAttribute('disabled', true);
+            }
+        })
+        document.getElementById('btn-delete').addEventListener('click', function(){
+            const secret = document.getElementById('secret-info');
+            secret.style.display = 'none';
+            })
+    </script>
+</body>
+</html>
+
+Output is not correct 
+recheck it 
+
+
+
+26-7 (semi-advanced) Event bubble and Stop propagating
+
+
+
+
+26-8 (advanced) Event delegate and benefit of Event bubble
+
+
+
+26-9 DOM events summary and home work
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary: Event handler</title>
+</head>
+<body>
+    <h1>Explore DOM Events</h1>
+    <button onclick="makeGreen()">Make Green</button>
+    <button id="make-yellow">Make yellow</button>
+    <br>
+    <input id="user-email" type="email">
+
+
+    <script>
+        // option: 1
+        function makeGreen(){
+            document.body.style.backgroundColor = 'green';
+        }
+        // option: 2
+        document.getElementById('make-yellow').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'yellow';
+        })
+         // option: 3
+        document.getElementById('user-email').addEventListener('keyup', function(event){
+           console.log(event.target.value)
+        })
+    </script>
+</body>
+</html>
+
+Output-
+
+26- Quiz 
+
+
+
+
+"# js-26" 
